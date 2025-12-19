@@ -800,7 +800,7 @@ const resolveBiddingRound = (hostKey) => {
     } else if (actA.type === 'REST') {
         // 休息：恢复5CP，如果没买情报则恢复1IP
         state.teamAResources.cp += 5;
-        if (!actA.usedIntel) {
+        if (!actA.usedIntel && state.teamAResources.ip==0) {
             state.teamAResources.ip += 1;
         }
     }
@@ -813,7 +813,7 @@ const resolveBiddingRound = (hostKey) => {
     } else if (actB.type === 'REST') {
         // 休息：恢复5CP，如果没买情报则恢复1IP
         state.teamBResources.cp += 5;
-        if (!actB.usedIntel) {
+        if (!actB.usedIntel && state.teamBResources.ip==0) {
             state.teamBResources.ip += 1;
         }
     }
