@@ -128,14 +128,14 @@
               <!-- 星级：选手和观众视角需要解锁后才显示，主持人始终显示 -->
               <div class="stars" v-if="role === 'PLAYER' || role === 'SPECTATOR'">
                 <template v-if="intelUnlocked">
-                  {{ '★'.repeat(biddingOperator?.rarity || 0) }}
+                  {{ `[${biddingOperator?.rarity}]` + '★'.repeat(biddingOperator?.rarity || 0) }}
                 </template>
                 <template v-else>
                   ???
                 </template>
               </div>
               <div class="stars" v-else>
-                {{ '★'.repeat(biddingOperator?.rarity || 0) }}
+                {{ `[${biddingOperator?.rarity}]` + '★'.repeat(biddingOperator?.rarity || 0) }}
               </div>
               
               <!-- 分支：选手和观众视角需要解锁后才显示，主持人始终显示 -->
