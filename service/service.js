@@ -2234,6 +2234,7 @@ wss.on('connection', (ws, req) => {
                 state.teamATerminated = true;
                 if (!state.firstTerminatedTeam) {
                     state.firstTerminatedTeam = 'A';
+                    state.teamAResources.cp += 10;
                 }
                 // 【新增】记录终止发生的回合
                 if (state.isBidding) {
@@ -2248,6 +2249,7 @@ wss.on('connection', (ws, req) => {
                 state.teamBTerminated = true;
                 if (!state.firstTerminatedTeam) {
                     state.firstTerminatedTeam = 'B';
+                    state.teamBResources.cp += 10;
                 }
                 // 【新增】记录终止发生的回合
                 if (state.isBidding) {
